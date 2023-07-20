@@ -50,3 +50,13 @@ resource "docker_image" "ubuntu" {
   name         = "ubuntu:latest"
   keep_locally = false
 }
+
+resource "docker_container" "ubuntu" {
+  image = docker_image.ubuntu.image_id
+  name  = "tutorial-ubuntu"
+  command = [
+    "tail",
+    "-f",
+    "/dev/null"
+  ]
+}
