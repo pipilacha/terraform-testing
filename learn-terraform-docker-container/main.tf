@@ -45,3 +45,8 @@ resource "docker_image" "python" {
   name         = "python:3.12.0b4-alpine3.18"
   keep_locally = false
 }
+
+resource "docker_image" "ubuntu" {
+  name         = "ubuntu:latest"
+  keep_locally = false
+}
